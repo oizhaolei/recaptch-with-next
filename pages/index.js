@@ -37,7 +37,7 @@ export default function Home() {
         // Else throw an error with the message returned
         // from the API
         const error = await response.json();
-        throw new Error(error.message)
+        throw new Error(error.message);
       }
     } catch (error) {
       alert(error?.message || "Something went wrong");
@@ -56,7 +56,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div id="feedback-form">
-        <h2 className="header">Hello reCAPTCHA</h2>
+        <h2 className="header">Hello reCAPTCHA V3</h2>
         <div>
           <form onSubmit={handleSubmit}>
             <ReCAPTCHA
@@ -68,6 +68,7 @@ export default function Home() {
             <input
               onChange={handleChange}
               required
+              value={email}
               type="email"
               name="email"
               placeholder="Email"
